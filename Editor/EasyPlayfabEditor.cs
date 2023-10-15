@@ -72,7 +72,7 @@ namespace EasyPlayfab.Editor
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
             GUI.backgroundColor = Color.white;
-            if (!int.TryParse(appId, out int app))
+            if (appId == "" || appSecret == "")
                 GUI.enabled = false;
             else
             {
