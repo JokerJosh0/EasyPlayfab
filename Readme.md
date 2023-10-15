@@ -208,7 +208,6 @@ EasyAchievements.AddFields("Identifier", "field");
 # Info
 More will come in the future, join the [Discord](https://discord.gg/bvvCc9cjVP) to get updates or get future packages
 ## Credits
-[JokerJosh](https://discord.com/users/791550177780563998) - Creating the package
-
-
-[Maximal](https://discord.com/users/1108509518779920405) - Testing the package and writing documentation
+- [JokerJosh](https://discord.com/users/791550177780563998) - Creating the package
+- [fchb1239](https://discord.com/users/382937526668623893) - Various scripts and resources
+- [Maximal](https://discord.com/users/1108509518779920405) - Testing the package and writing documentation
