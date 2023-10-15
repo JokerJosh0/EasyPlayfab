@@ -22,6 +22,12 @@ Returns the users Oculus profile image link (string)
 ### `LoginHandle.isLoggedIn`
 Returns if the user is logged into playfab (bool)
 
+### `LoginHandle.Spamming()`
+Use this when making a raw playfab api call (raw meaning something thats not in the EasyUsages because it does this automatically.)
+
+### `LoginHandle.HasMods()`
+Use this to check if the user has mods (untested). This is already called before logging in.
+
 ## EasyPlayfab.Friends
 
 ### `public static List<FriendInfo> friends`
