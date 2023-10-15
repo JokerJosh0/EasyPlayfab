@@ -3,6 +3,25 @@ When you import the package/files you need to navigate to EasyPlayfab > Settings
 
 the package has built-in api spam prevention. Modding detection (untested). oculus user validation. secure api features (currency modification, IAP, Item granting). and has most of the playfab api features, just made easier. and give you access to all of the oculus features (requires the data use checkup features to be accepted) 
 
+## LoginHandle Variables
+### `LoginHandle.playfab_playerId`
+Returns the users PlayFab Id (string)
+
+### `LoginHandle.oculus_username`
+Returns the users Oculus username (string)
+
+### `LoginHandle.oculus_displayname`
+Returns the users Oculus displayname (string)
+
+### `LoginHandle.oculus_userId`
+Returns the users Oculus userId (string)
+
+### `LoginHandle.oculus_profileLink`
+Returns the users Oculus profile image link (string)
+
+### `LoginHandle.isLoggedIn`
+Returns if the user is logged into playfab (bool)
+
 ## EasyPlayfab.Friends
 
 ### `public static List<FriendInfo> friends`
