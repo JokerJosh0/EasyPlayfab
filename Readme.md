@@ -1,7 +1,7 @@
 # Introduction
 When you import the package/files you need to navigate to EasyPlayfab > Settings and make sure you set your 'app id' and 'app secret' from your oculus dashboard then press 'Validate Cloudscript' (assuming youve logged into your title), once complete press 'Rule Tutorial' and follow the steps provided.
 
-the package has built-in api spam prevention. Modding detection (untested). oculus user validation. secure api features (currency modification, IAP, Item granting). and has most of the playfab api features, just made easier. and give you access to all of the oculus features (requires the data use checkup features to be accepted) 
+the package has built-in api spam prevention. Modding detection (working, untested with harmonypatch). oculus user validation. secure api features (currency modification, IAP, Item granting). and has most of the playfab api features, just made easier. and give you access to all of the oculus features (requires the data use checkup features to be accepted) 
 
 ## LoginHandle Variables
 ### `LoginHandle.playfab_playerId`
@@ -24,9 +24,6 @@ Returns if the user is logged into playfab (bool)
 
 ### `LoginHandle.Spamming()`
 Use this when making a raw playfab api call (raw meaning something thats not in the EasyUsages because it does this automatically.)
-
-### `LoginHandle.HasMods()`
-Use this to check if the user has mods (untested). This is already called before logging in.
 
 ## EasyPlayfab.Friends
 
