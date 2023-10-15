@@ -49,8 +49,6 @@ namespace EasyPlayfab.Login
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
         private static void Login()
         {
-            if (HasMods()) return;
-
             Core.AsyncInitialize().OnComplete(c => 
             {
                 Entitlements.IsUserEntitledToApplication().OnComplete(callback =>
@@ -108,8 +106,8 @@ namespace EasyPlayfab.Login
             PhotonNetwork.AuthValues = customAuth;
         }
 #endif
-
-        public static bool HasMods()
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void HasMods()
         {
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             string[] bannedDlls = new string[] 
@@ -124,10 +122,8 @@ namespace EasyPlayfab.Login
                 if (bannedDlls.Contains(x.FullName.ToLower()))
                 {
                     UnityEngine.Application.Quit(1);
-                    return true;
                 }
             }
-            return false;
         }
 
         public static bool Spamming()
