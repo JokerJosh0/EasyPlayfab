@@ -12,44 +12,36 @@ handlers.NewLogin = function(args, context) {
             if (!JSON.parse(responseString).is_valid) 
             {
                 var banRequest = {
-                    'Bans': [{
-                        DurationInHours: 72,
-                        PlayFabId: currentPlayerId,
-                        Reason: 'Invalid Oculus account',
-                        IPAddress: context.playStreamEvent.IPV4Address
-                        }]
+                        'DurationInHours': 64,
+                        'PlayFabId': currentPlayerId,
+                        'Reason': 'Validation was unsucessful',
+                        'IPAddress': context.playStreamEvent.IPV4Address
                     }
                     server.BanUsers(banRequest);
-                    return { error: 'Login request invalid' };
-            }else 
-            {
-                var banRequest = {
-                    'Bans': 
-                    [{
-                        DurationInHours: 72,
-                        PlayFabId: currentPlayerId,
-                        Reason: 'Invalid Oculus account',
-                        IPAddress: context.playStreamEvent.IPV4Address
-                    }]
-                }
-                server.BanUsers(banRequest);
-                return { error: 'Login request invalid' };
+                    return { error: 'Unable To Login' };
             }
         } 
         else 
         {
             var banRequest = {
-                'Bans': 
-                [{
-                    DurationInHours: 72,
-                    PlayFabId: currentPlayerId,
-                    Reason: 'Invalid Oculus account',
-                    IPAddress: context.playStreamEvent.IPV4Address
-                }]
-            }
+                        'DurationInHours': 64,
+                        'PlayFabId': currentPlayerId,
+                        'Reason': 'Custom tags are null',
+                        'IPAddress': context.playStreamEvent.IPV4Address
+                    }
             server.BanUsers(banRequest);
-            return { error: 'Login request invalid' };
+            return { error: 'Custom tags were null' };
         }
+    }else{
+
+            var banRequest = {
+                        'DurationInHours': 64,
+                        'PlayFabId': currentPlayerId,
+                        'Reason': 'Custom tags are null',
+                        'IPAddress': context.playStreamEvent.IPV4Address
+                    }
+            server.BanUsers(banRequest);
+            return { error: 'Custom tags were null' };
     }
 }
 handlers.GrantItemToPlayer = function GrantItemToPlayer(args)
